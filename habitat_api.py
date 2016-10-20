@@ -1,6 +1,6 @@
 from google.appengine.ext import endpoints
 
-from cars_api import *
+from api_endpoints.cars_api import *
 
 
 

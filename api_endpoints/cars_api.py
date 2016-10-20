@@ -6,7 +6,7 @@ import urllib
 from protorpc import message_types
 from protorpc import remote
 
-from models import *
+from models.CarsModel import *
 
 def getXMLDocumentForCarId(car_id):
 	url_string = "http://www.fueleconomy.gov/ws/rest/vehicle/" + car_id
