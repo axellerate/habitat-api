@@ -11,7 +11,7 @@ class Cars(BaseModel):
 	make = ndb.StringProperty(required = True)
 	model = ndb.StringProperty(required = True)
 	year = ndb.IntegerProperty(required = True)
-	emissions_per_mile = ndb.FloatProperty(required = True)
+	co2_grams_per_km = ndb.FloatProperty(required = True)
 
 	@property
 	def emissions_per_km(self):
@@ -22,7 +22,7 @@ class Cars(BaseModel):
 							make=self.make,
 							model=self.model,
 							year=self.year,
-							emissions_per_mile=self.emissions_per_mile)
+							co2_grams_per_km=self.co2_grams_per_km)
 
 	@classmethod
 	def addNewCar(cls, car):
@@ -31,6 +31,6 @@ class Cars(BaseModel):
 		newCar.make = car.make
 		newCar.model = car.model
 		newCar.year = car.year
-		newCar.emissions_per_mile = car.emissions_per_mile
+		newCar.co2_grams_per_km = car.emissions_per_mile / 1.67
 		newCar.put()
 		return newCar
