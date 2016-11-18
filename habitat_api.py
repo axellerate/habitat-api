@@ -1,6 +1,6 @@
 from google.appengine.ext import endpoints
 
-from api_endpoints.cars_api import *
+from api_endpoints.vehicles_api import *
 
-APPLICATION = endpoints.api_server([CarsAPI],
+APPLICATION = endpoints.api_server([VehiclesAPI],
 										restricted=False)

@@ -1,14 +1,17 @@
 from protorpc import messages
+from protorpc import message_types
 
 class CarMessage(messages.Message):
 
 	"""Message for a full Car object"""
 
-	car_id = messages.IntegerField(1, required=True)
-	make = messages.StringField(2, required=True)
-	model = messages.StringField(3, required=True)
-	year = messages.IntegerField(4, required=True)
-	emissions_per_mile = messages.FloatField(5, required=True)
+	car_id = messages.IntegerField(1)
+	make = messages.StringField(2)
+	model = messages.StringField(3)
+	year = messages.IntegerField(4)
+	co2_grams_per_km = messages.FloatField(5)
+	message = messages.StringField(6)
+	created = message_types.DateTimeField(7)
 
 
 class CarsMessage(messages.Message):
