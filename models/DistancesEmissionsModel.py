@@ -1,6 +1,6 @@
 from BaseModel import *
 
-class Distances(BaseModel):
+class DistancesEmissionsModel(BaseModel):
 
 	"""
 	Contains emissions data from each user.
@@ -10,8 +10,8 @@ class Distances(BaseModel):
 
 	user = ndb.KeyProperty(kind = "Users")
 	distance = ndb.FloatProperty(default = 0.0)
-	start_datetime = ndb.DateTime(required = True)
-	end_datetime = ndb.DateTime(required = True)
+	start_datetime = ndb.DateTimeProperty(required = True)
+	end_datetime = ndb.DateTimeProperty(required = True)
 	vehicle = ndb.KeyProperty(kind = "Vehicle")
 	emissions = ndb.FloatProperty(required = True)
 

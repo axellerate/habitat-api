@@ -1,6 +1,6 @@
 from BaseModel import *
 
-class Motorcycles(BaseModel):
+class MotorcyclesModel(BaseModel):
 
 	motorcycle_id = IntegerProperty(required = True)
 	make = StringProperty(required = True)
