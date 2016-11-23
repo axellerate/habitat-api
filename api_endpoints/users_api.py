@@ -59,5 +59,5 @@ class UsersAPI(remote.Service):
 			raise endpoints.UnauthorizedException('Invalid token.')
 		else:
 			current_user_id = get_user_id()
-			user = UsersModel.query(UsersModel.google_user_id == current_user_id).get()
+			user = UsersModel.get_user_by_id(current_user_id)
 			return UserMessage(email = current_user.email(), user_id = user.google_user_id)
